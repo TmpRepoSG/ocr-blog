@@ -8,7 +8,9 @@ export class PostsService {
     posts: Post[] = [];
     postsSubject = new Subject<Post[]>();
 
-    constructor() { }
+    constructor() {
+        this.getPosts();
+    }
 
     emitPosts() {
         this.postsSubject.next(this.posts);
